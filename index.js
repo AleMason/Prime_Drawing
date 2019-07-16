@@ -39,17 +39,19 @@ document.addEventListener("DOMContentLoaded", function() {
             
           }
           else
-            ctx.fillStyle = "lime";
-          ctx.fillRect(x,y,dim,dim);
+          {
           number++;
           x+=dim;
           if (x == 600) {
             x=0
             y+=dim;
           }
+          }
             
       }
       else {
+          ctx.fillStyle = "lime";
+          ctx.fillRect(x,y,dim,dim);
           number++;
           x+=dim;
           if (x == canvas.width) {
