@@ -35,17 +35,15 @@ document.addEventListener("DOMContentLoaded", function() {
       if (check == false) {
           if (x == y) {
             ctx.fillStyle = "red";
-            console.log(number);
-            
           }
           else
           {
-          number++;
-          x+=dim;
-          if (x == 600) {
-            x=0
-            y+=dim;
-          }
+            number++;
+            x+=dim;
+            if (x == 600) {
+              x=0
+              y+=dim;
+            }
           }
             
       }
