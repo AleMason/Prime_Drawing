@@ -33,29 +33,28 @@ document.addEventListener("DOMContentLoaded", function() {
     let inter = setInterval(()=> {
       check = isPrime(number);
       if (check == false) {
-          if (x == y) {
-            ctx.fillStyle = "red";
-          }
-          else
-          {
-            number++;
-            x+=dim;
-            if (x == 600) {
-              x=0
-              y+=dim;
-            }
-          }
-            
-      }
-      else {
+        if (x == y) {
+          ctx.fillStyle = "red";
+          console.log(number);  
+        }
+        else {
           ctx.fillStyle = "lime";
           ctx.fillRect(x,y,dim,dim);
           number++;
           x+=dim;
-          if (x == canvas.width) {
+          if (x == 600) {
             x=0
             y+=dim;
           }
+        }
+      }
+      else {
+        number++;
+        x+=dim;
+        if (x == canvas.width) {
+          x=0
+          y+=dim;
+        }
       }
       if (y == canvas.height) {
         clearInterval(inter);
