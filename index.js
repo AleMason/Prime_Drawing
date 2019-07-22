@@ -1,7 +1,7 @@
 function isPrime(number)
 {
 
-  if (number ===1)
+  if (number === 1)
   {
     return false;
   }
@@ -23,43 +23,37 @@ function isPrime(number)
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    let canvas = document.querySelector("#board");
-    let ctx = canvas.getContext("2d");
-    let number = 1;
-    let x = 0;
-    let y = 0;
-    let check;
-    let dim=5;
-    let inter = setInterval(()=> {
-      check = isPrime(number);
-      if (check == false) {
-        if (x == y) {
-          ctx.fillStyle = "red";
-          console.log(number);  
-        }
-        else {
-          ctx.fillStyle = "lime";
-          ctx.fillRect(x,y,dim,dim);
-          number++;
-          x+=dim;
-          if (x == 600) {
-            x=0
-            y+=dim;
-          }
-        }
+  let canvas = document.querySelector("#board");
+  let ctx = canvas.getContext("2d");
+  let number = 1;
+  let x = 0;
+  let y = 0;
+  let check;
+  let dim=5;
+  let inter = setInterval(()=> {
+    //debugger;
+    check = isPrime(number);
+    if (check == true) {
+      ctx.fillStyle = "lime";
+      ctx.fillRect(x,y,dim,dim);
+      number++;
+      x+=dim;
+      if (x == 600) {
+        x=0
+        y+=dim;
       }
-      else {
-        number++;
-        x+=dim;
-        if (x == canvas.width) {
-          x=0
-          y+=dim;
-        }
+    }
+    else {
+      number++;
+      x+=dim;
+      if (x == canvas.width) {
+        x=0
+        y+=dim;
       }
       if (y == canvas.height) {
         clearInterval(inter);
         console.log("done");
       }
-        
+    }
   }, 5);
 })
